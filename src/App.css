@@ -1,0 +1,127 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.nav-items{
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  background-color: #000;
+}
+.logo{
+  margin-left: 0.6rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none !important;
+  line-height: 60px;
+  outline: none;
+}
+.nav-data{
+  line-height: 60px;
+  margin-right: 1rem;
+}
+.nav-item-data{
+  text-decoration: none;
+  margin: 0 0.9rem;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+}
+.nav-item-data:hover{
+  color: #fff;
+}
+.main-container{
+  margin-left: 1rem;
+}
+.main-data-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.active{
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+.logo{
+  text-decoration: none !important;
+}
+.btn-sign-in{
+  margin-top: -2rem;
+}
+.imgUNcover {
+  /* width: 285px; */
+  height: 345px;
+  object-fit: cover;
+}
+.main-carousel-div{
+    display: flex;
+  height: 300px;
+  width: 300px;
+}
+.img-size-carousel, .carousel-data{
+  width: 185px;
+  height: 200px;
+  margin-left: 1rem;
+  background-color: white;
+
+}
+.card-type-name{
+  margin: 0.4rem 0;
+  font-size: 14.6px;
+  font-weight: 500;
+  text-align: center; 
+}
+.card-type-price{
+  font-size: 14.6px;
+  color: #3E9342;
+  font-weight: 500;
+  text-align: center;
+  margin: 0.4rem 0;
+  cursor: pointer;
+}
+.card-type-discount{
+  text-transform: uppercase;
+  font-size: 14.6px;
+  font-weight: 500;
+  color: rgb(143, 139, 139);
+  text-align: center;
+}
