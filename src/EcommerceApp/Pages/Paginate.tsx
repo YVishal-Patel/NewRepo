@@ -13,8 +13,8 @@ const Paginate = ({totalPosts,postsPerPage,setCurrentPage}:any) => {
     <div>
      {pages?.map((item:any) =>{
      return(<div key ={item.id}> 
-     <button onClick={()=>setCurrentPage(pages)}>{item}</button>
-     </div>)
+     <button onClick={()=>setCurrentPage(item)}>{item}</button>
+     </div>) 
      })}
     </div>
     </>

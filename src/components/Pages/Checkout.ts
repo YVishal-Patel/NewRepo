@@ -9,7 +9,7 @@ export const getStateData = createAsyncThunk(
   async (data, thunkApi) => {
     try {
       let response = await axios.get<Post[]>(
-        "https://fakestoreapi.com/products"
+        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd"
       );
       return response.data;
     } catch (error: any) {
