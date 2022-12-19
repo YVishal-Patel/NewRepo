@@ -2,19 +2,27 @@ import Carousel from "react-bootstrap/Carousel";
 import img1 from "../../EcommerceApp/Shared/img1.jpg";
 import img2 from "../../EcommerceApp/Shared/img2.jpg";
 import img3 from "../../EcommerceApp/Shared/img3.jpg";
-import React, { Component, useEffect } from "react";
+import React, { Component, useEffect, useState } from "react";
 import { useAppSelector } from "../../EcommerceApp/Models/SliceModel";
 import { useAppDispatch } from "../../EcommerceApp/Models/SliceModel";
 import { getStateData } from "./Checkout";
+import Paginate from "../../EcommerceApp/Pages/Paginate";
 
 
 function Home() {
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(8);
 
   const {data} = useAppSelector(state => state.getApiData);
  const dispatch = useAppDispatch()
   useEffect(()=>{
     dispatch(getStateData())
   },[])
+
+  const lastPostIndex = currentPage * postsPerPage ;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+  let newApiData =  data?.slice(firstPostIndex, lastPostIndex)
   return (
     <>
     <Carousel>
@@ -44,8 +52,8 @@ function Home() {
       </Carousel.Item>
     </Carousel>
     <div className="main-data-container ">
-    {data &&
-          data?.map((item: any) => {
+    {newApiData &&
+          newApiData?.map((item: any) => {
             const { title, body, id, price, description, category, image, rating } = item;
 
             return (
@@ -80,6 +88,7 @@ function Home() {
             );
           })}
 </div>
+   <Paginate totalPosts={data?.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
     </>
   );
 }
