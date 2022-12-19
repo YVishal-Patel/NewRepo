@@ -3,7 +3,6 @@ import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { Post } from "./Services";
 
-
 export const getStateData = createAsyncThunk(
   "posts/getStateData",
   async (data, thunkApi) => {
@@ -18,14 +17,13 @@ export const getStateData = createAsyncThunk(
   }
 );
 
-
 type initialStateType = {
   loading: boolean;
   data: Post[] | null;
   error: null | string;
-}
+};
 
-const initialState:initialStateType = {
+const initialState: initialStateType = {
   loading: false,
   data: [],
   error: "",
